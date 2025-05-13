@@ -13,3 +13,16 @@ def char_frequency(text):
     else:
       frequency[lower_char] += 1
   return frequency
+
+def sorted_frequency(frequency):
+  
+  def sort_on(dict):
+    return dict["num"]
+  
+  characters = []
+  
+  for key in frequency:
+    characters.append({"char": key, "num": frequency[key]})
+  
+  characters.sort(key=sort_on, reverse=True)
+  return characters
