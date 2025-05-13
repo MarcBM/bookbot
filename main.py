@@ -1,7 +1,11 @@
+import sys
 from stats import count_words, char_frequency, sorted_frequency
 
 def main():
-  path = "books/frankenstein.txt"
+  if len(sys.argv) != 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+  path = sys.argv[1]
   text = get_book_text(path)
   word_count = count_words(text)
   frequency = char_frequency(text)
